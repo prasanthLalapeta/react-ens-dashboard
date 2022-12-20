@@ -1,8 +1,12 @@
-![](https://searchvectorlogo.com/wp-content/uploads/2019/11/ethereum-name-service-ens-logo-vector.png)
+<img src="https://cryptologos.cc/logos/ethereum-name-service-ens-logo.png"  width="10%" />
 
-# ENS - Dashboard FE
+# ENS Dashboard FE
 
 This is the repository of ENS dashboard app. Here we will be listing all recently registered ENS domains.
+
+## 🤖 Developer
+
+<img src="https://logos.textgiraffe.com/logos/logo-name/Prasanth-designstyle-smoothie-m.png"  width="15%" />
 
 ## 📒 Table of Contents
 
