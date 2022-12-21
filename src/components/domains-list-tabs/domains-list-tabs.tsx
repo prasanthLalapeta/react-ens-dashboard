@@ -76,11 +76,11 @@ export const DomainsListTabs = () => {
           <ButtonsWrapper>
             <LinkButton
               type="textBtn"
-              url="https://github.com/prasanthLalapeta"
+              url="https://github.com/prasanthLalapeta/react-ens-dashboard"
             >
               {t('translation:buttons.links.website')}
             </LinkButton>
-            <LinkButton url="https://github.com/prasanthLalapeta">
+            <LinkButton url="https://discord.com/users/1636">
               <Icon icon="discord" />
             </LinkButton>
             <LinkButton
