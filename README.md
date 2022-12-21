@@ -13,6 +13,7 @@ This is the repository of ENS dashboard app. Here we will be listing all recentl
 - [Requirements](#-requirements)
 - [Getting Started](#-getting-started)
   - [Development](#-development)
+- [Available Features](#-available-features)
 - [Contribution guideline](#-contribution-guideline)
 
 ## ⚙️ Requirements
@@ -52,6 +53,22 @@ Your app is ready to be deployed!
 ```sh
 yarn build
 ```
+
+### 🎸 Available Features
+
+- Allows doing a name lookup (e.g. user inputs prasanth.eth) and gets back the domain info
+- Shows the list of the most recent domain registrations
+- Support ENS Reverse Resolution for domain registered address
+- Handles all loading states
+- Responsive design
+- Dark mode
+- Infinite lazy loading of all recently registered domains in grid view with pagination
+- Detail page of individual domain
+- Configured `react-redux` to use in growl notifications etc., along with GraphQL
+- Packages like `stitches`, `radix-ui` used for styling components
+- Supports internationalization
+- Configured development and production environments
+- Deployed in Vercel
 
 ## 🙏 Contribution guideline
 
