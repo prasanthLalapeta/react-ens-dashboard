@@ -48,7 +48,11 @@ export const DomainsList = () => {
         loadingMore={!loadingENSRegistrations && hasMoreDomains}
         items={parsedENSDomains}
         ItemRenderer={React.memo((domainData) => (
-          <DomainCard data={domainData} key={domainData.domain} />
+          <DomainCard
+            data={domainData}
+            key={domainData.domain}
+            registeredUserAddress={domainData.registrant}
+          />
         ))}
         Skeleton={CardSkeleton}
       />

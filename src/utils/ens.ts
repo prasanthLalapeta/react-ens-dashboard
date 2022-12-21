@@ -1,3 +1,4 @@
+import { providers } from 'ethers';
 import { ENSRegistrationType } from '../api/declarations';
 
 const MS_IN_SECONDS = 1000;
@@ -38,3 +39,8 @@ export const formatENSName = (name?: string) => {
     name.length,
   )}`;
 };
+
+export const reverselookupProvider =
+  new providers.StaticJsonRpcProvider(
+    'https://mainnet.infura.io/v3/d3f3bd685a4849c2a092982af5e5cd88',
+  );

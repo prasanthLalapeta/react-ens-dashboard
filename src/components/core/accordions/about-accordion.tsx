@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import * as Accordion from '@radix-ui/react-accordion';
 import {
   AccordionStyle,
@@ -9,6 +9,8 @@ import {
 } from './styles';
 import useMediaQuery from '../../../hooks/use-media-query';
 import { Icon } from '../../icons';
+import { reverselookupProvider } from '../../../utils/ens';
+import { SkeletonBox } from '../skeleton';
 
 export interface AboutAccordionProps {
   data: any;
@@ -22,6 +24,27 @@ export const AboutAccordion = ({ data }: AboutAccordionProps) => {
   const [isAccordionOpen, setIsAccordionOpen] = useState(true);
 
   const isMobileScreen = useMediaQuery('(max-width: 850px)');
+
+  const [registeredUserDomain, setRegisteredUserDomain] =
+    useState('');
+  const [loadingRegisteredDomain, setLoadingRegisteredDomain] =
+    useState(true);
+
+  useEffect(() => {
+    const reverseLookup = async () => {
+      setLoadingRegisteredDomain(true);
+      const registeredUser =
+        await reverselookupProvider.lookupAddress(data.registrant);
+      setLoadingRegisteredDomain(false);
+      setRegisteredUserDomain(registeredUser || data.registrant);
+    };
+
+    reverseLookup();
+
+    return () => {
+      // this now gets called when the component unmounts
+    };
+  }, [data]);
 
   return (
     <AccordionStyle
@@ -50,7 +73,10 @@ export const AboutAccordion = ({ data }: AboutAccordionProps) => {
           <div>
             <Flex>
               <Subtext>Registration Address</Subtext>
-              <Subtext>{data.registrant}</Subtext>
+              {loadingRegisteredDomain && (
+                <SkeletonBox size="small" />
+              )}
+              <Subtext>{registeredUserDomain}</Subtext>
             </Flex>
             <Flex>
               <Subtext>Assigned ETH Address</Subtext>
