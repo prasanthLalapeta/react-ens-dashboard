@@ -19,6 +19,8 @@ export const CollectionMetadataWrapper = styled('div', {
 
   '@md': {
     alignItems: 'flex-end',
+    marginTop: '20px',
+    marginBottom: '35px',
   },
 });
 
